@@ -41,10 +41,10 @@ module tt_um_suhrojo(
     end 
 
     // Assign the rows to a 6x6 matrix
-    always @(*) begin
+    always @* begin
         if (data_load) begin
             for (row_index = 0; row_index < 6; row_index = row_index + 1) begin
-                data_in[row_index] <= row[row_index][5:0];
+                data_in[row_index] <= row[row_index];
             end
         end
     end
