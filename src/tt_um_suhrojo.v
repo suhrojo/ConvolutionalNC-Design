@@ -17,8 +17,8 @@ module tt_um_suhrojo(
     reg [5:0] row[5:0];
     integer row_index;
     reg data_load, set_row;
-    reg [5:0] data_out[5:0];
-    reg [5:0] data_in[5:0][5:0];
+    reg [5:0] data_out[0:5];
+    reg [5:0] data_in[0:5][0:5];
 
     // Logic for storing ui_in[5:0] switch inputs into arrays of rows
     always @(posedge clk or negedge rst_n) begin 
@@ -41,7 +41,7 @@ module tt_um_suhrojo(
     end 
 
     // Assign the rows to a 6x6 matrix
-    always @* begin
+    always @(*) begin
         if (data_load) begin
             for (row_index = 0; row_index < 6; row_index = row_index + 1) begin
                 data_in[row_index] <= row[row_index];
