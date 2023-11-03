@@ -44,7 +44,7 @@ module tt_um_suhrojo(
     always @(*) begin
         if (data_load) begin
             for (row_index = 0; row_index < 6; row_index = row_index + 1) begin
-                data_in[row_index] <= row[row_index];
+                data_in[row_index][0:5] <= row[row_index];
             end
         end
     end
