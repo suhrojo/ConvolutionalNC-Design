@@ -24,7 +24,7 @@ module tt_um_suhrojo(
         if (!rst_n) begin
             data_load <= 1'b0;
             set_row <= 1'b0;
-            row_index <= 0
+            row_index <= 0;
         end
         else begin
             data_load <= ui_in[7];
@@ -53,6 +53,6 @@ module tt_um_suhrojo(
         .rst_n(rst_n),
         .data_in(data_in),
         .data_out(data_out)
-    )
+    );
 
 endmodule
