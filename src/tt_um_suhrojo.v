@@ -18,6 +18,7 @@ module tt_um_suhrojo(
     integer row_index;
     reg data_load, set_row;
     reg [5:0] data_out[5:0];
+    reg [5:0] data_in[5:0];
 
     // Logic for storing ui_in[5:0] switch inputs into arrays of rows
     always @(posedge clk or negedge rst_n) begin 
