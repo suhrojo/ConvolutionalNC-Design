@@ -50,9 +50,9 @@
 ///////////////////////////////////////// NEW CODE //////////////////////////////////
 
 module convLayer(
-    input wire [7:0] un_in,  // 8 buttons, un_in[7] is un_in[6]
+    input wire [7:0] ui_in,  // 8 buttons, un_in[7] is un_in[6]
     input wire clk,        // Clock input
-    input wire rst,        // Reset input
+    input wire rst_n,        // Reset input
     output wire [35:0] data_out  // Output data_out as a 36-bit number
 );
 
