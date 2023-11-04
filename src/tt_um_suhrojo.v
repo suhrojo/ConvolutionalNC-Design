@@ -60,7 +60,7 @@ module tt_um_suhrojo(
     convLayer Conv1(
         .clk(clk),
         .rst_n(rst_n),
-        .ui_in(un_in),
+        .ui_in(ui_in),
         .data_out(data_out)
     );
 
