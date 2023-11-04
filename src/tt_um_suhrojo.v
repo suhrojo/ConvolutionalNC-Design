@@ -30,12 +30,12 @@ module tt_um_suhrojo(
         else begin
             data_load <= ui_in[7];
             if (ui_in[6] && set_row) begin //if set_row is high then we can store a new row
-                row[row_index] <= ui_in[5:0]; // set current row of switches to row array
+                row[row_index] <= ui_in[5:0]; // stores current row of switches in row array
                 row_index <= row_index + 1;
-                set_row <= 1'b0; // reset back to 0
+                set_row <= 1'b0;
             end 
             else begin
-                set_row <= ui_in[6];
+                set_row <= ui_in[6]; //sets the set_row based on ui_in[6] switch
             end 
         end 
     end 
