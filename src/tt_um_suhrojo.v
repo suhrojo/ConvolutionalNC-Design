@@ -17,8 +17,8 @@ module tt_um_suhrojo(
     reg [5:0] row[5:0]; // array of reg to store each row
     integer row_index; // keep track of current row index
     reg data_load, set_row; 
-    reg [5:0] data_out[5:0]; //array 
-    reg [5:0] data_in[5:0];
+    reg [5:0] data_out[5:0][5:0]; // stores output from convLayer kernel filter  
+    reg [5:0] data_in[5:0][5:0]; // stores the 6x6 matrix created from the 6 rows of switch inputs
 
     // Logic for storing ui_in[5:0] switch inputs into arrays of rows
     always @(posedge clk or negedge rst_n) begin 
