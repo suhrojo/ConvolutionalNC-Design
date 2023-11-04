@@ -21,6 +21,11 @@ module convLayer (
         end
     end
 
+    // kernel [i][j]
+    //   [1 1 1]
+    //   [1 1 1]
+    //   [1 1 1]
+
     // apply convolution: 6x6x1 input * filter 1: kernel = 6x6x1 feature map
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -34,7 +39,7 @@ module convLayer (
                     feature_map[i][j] <= data_in[a][b] * kernel[i][j]; //applying kernel filter
                     sum <= sum + feature_map[i][j]; //sum of 36 product numbers
                 end
-            end 
+            end
             data_out <= sum;
         end
     end 
