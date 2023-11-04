@@ -5,7 +5,7 @@ module convLayer (
     input wire rst_n, // reset input
     input wire [5:0][5:0] data_in, //6x6 data_in from switches
 
-    output reg [5:0][5:0] data_out //feature_map output
+    output reg [5:0][5:0] data_out //feature_map with summation output
 );
     reg [5:0][5:0] kernel; //6x6 predefined filter kernel
     reg [5:0][5:0] feature_map; //feature_map output before summation of products
@@ -26,7 +26,7 @@ module convLayer (
     //   [1 1 1]
     //   [1 1 1]
 
-    // apply convolution: 6x6x1 input * filter 1: kernel = 6x6x1 feature map
+    // apply convolution: 6x6 matrix * 6x6 kernel of 1s = 6x6 feature map
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             data_out <= 12'd0; // data_out reset to 0
