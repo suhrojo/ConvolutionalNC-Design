@@ -57,6 +57,7 @@ module tt_um_suhrojo(
     // );
 
     /////////////////////////////NEW CODE/////////////////////////////////////////////////
+    reg [35:0] data_out;
     convLayer Conv1(
         .clk(clk),
         .rst_n(rst_n),
